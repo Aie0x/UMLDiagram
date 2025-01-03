@@ -67,29 +67,23 @@ class Vendeur:
 
 # Exemple
 def exemple():
-    # Création d'une brasserie
     brasserie = Brasserie("Brasserie Ephec", 1995)
 
-    # Ajout d'un fournisseur
     fournisseur = Fournisseur("Fournisseur ABinBEV")
     fournisseur.livrer(100)  # Fournisseur livre 100 unités
     brasserie.ajouter_fournisseur(fournisseur)
 
-    # Ajout d'un style de bière
     style_biere = StyleBiere("Pils")
     brasserie.ajouter_style_biere(style_biere)
 
-    # Ajout d'une bière spécifique à ce style
     biere = Biere("Ephec Pils", 1.2, 5.2)
     biere.produire(50)  # Produire 50 unités de cette bière
     style_biere.ajouter_biere(biere)
-
-    # Ajout d'un vendeur
+    
     vendeur = Vendeur("Beer Bar", offre_gratuite=True)
     vendeur.commander(30)  # Le vendeur commande 30 unités
     brasserie.ajouter_vendeur(vendeur)
 
-    # Appel de méthodes
     print(f"La brasserie {brasserie.nom_brasserie} est ouverte : {brasserie.est_ouvert()}")
     print(f"Style de bière produit : {style_biere.nom_style}")
     print(f"Nombre total de bières fabriquées pour le style {style_biere.nom_style} : {style_biere.nbre_fabriquee()}")
